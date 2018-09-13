@@ -18,9 +18,8 @@ class TodoList extends Component {
       type: "ADD_TODO",
       task: this.state.task
     });
-    this.setState({
-      task: ""
-    });
+
+    event.target.reset();
   }
   handleChange(event) {
     this.setState({
@@ -29,8 +28,8 @@ class TodoList extends Component {
   }
 
   render() {
-    let todos = this.props.todos.map((task, index) => (
-      <Todo task={task} key={index} />
+    let todos = this.props.todos.map((val, index) => (
+      <Todo task={val.task} key={index} />
     ));
     return (
       <div>
