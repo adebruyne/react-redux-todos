@@ -27,8 +27,8 @@ class TodoList extends Component {
       [event.target.name]: event.target.value
     });
   }
-  removeTodo(event, id) {
-    debugger;
+  removeTodo(id) {
+    // debugger;
     this.props.dispatch({
       type: "REMOVE_TODO",
       id
