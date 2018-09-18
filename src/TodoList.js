@@ -8,6 +8,7 @@ import { Route } from "react-router-dom";
 class TodoList extends Component {
   constructor(props) {
     super(props);
+    
     this.handleAdd = this.handleAdd.bind(this);
   }
   handleAdd(val) {

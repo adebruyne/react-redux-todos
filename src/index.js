@@ -7,6 +7,7 @@ import { createStore } from "redux"; //Redux.createStore
 import rootReducer from "./rootReducer";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import thunk from "redux-thunk";
 
 const store = createStore(
   rootReducer,
