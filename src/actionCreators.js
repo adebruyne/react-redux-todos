@@ -23,6 +23,9 @@ function handleRemove(id) {
   };
 }
 
+
+//the three actioncreators below dont return object, they return function
+
 export function getTodos() {
   return dispatch => {
     return fetch("http://localhost:3001/api/todos")
@@ -47,14 +50,13 @@ export function addTodo(task) {
   };
 }
 
-
-export function removeTodo(id){
+export function removeTodo(id) {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/todos/${}id`, {
+    return fetch(`http://localhost:3001/api/todos/${id}`, {
       method: "DELETE"
     })
-    .then(res => res.json())
-    .then(data => dispatch(handleRemove(id)))
-    .catch(err => console.log("SOMETHING WENT WRONG", err))
-  }
+      .then(res => res.json())
+      .then(data => dispatch(handleRemove(id)))
+      .catch(err => console.log("SOMETHING WENT WRONG", err));
+  };
 }
